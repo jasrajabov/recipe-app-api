@@ -30,8 +30,8 @@ class ModelTests(TestCase):
             get_user_model().objects.create_user(None, 'Test1234!')
 
     def test_super_user_creation(self):
-        user = get_user_model().objects.create_superuser('jasur@gmail.com',
+        user = get_user_model().objects.create_superuser('admin@gmail.com',
                                                          'Test12345!')
 
-        self.assertTrue(user.isActive)
-        self.assertTrue(user.isStaff)
+        self.assertTrue(user.is_active)
+        self.assertTrue(user.is_superuser)
